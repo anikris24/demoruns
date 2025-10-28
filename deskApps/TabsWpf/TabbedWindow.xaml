@@ -57,6 +57,156 @@
                         Text="Select a tab above to navigate to a different section."/>
             </StackPanel>
         </TabItem>
+        <TabItem Header="🏠 Home 11">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 1"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 21">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 2"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 31">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 3"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 41">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 4"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 51">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 5"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 1r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 1"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 2r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 2"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 3r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 3"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 4r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 4"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 5r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 5"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 11r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 1"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 21r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 2"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 31r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 3"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 41r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 4"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 51r">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 5"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
 
         <TabItem Header="📝 Data Entry">
             <Grid Margin="20">
