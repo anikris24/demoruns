@@ -1,4 +1,4 @@
-namespace TabMauApp; // <--- The correct namespace
+namespace TabBarsDemo; // <--- The correct namespace
 
 public partial class BaseballScoresPage : ContentPage // <--- The correct class name
 {
