@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 namespace TabsWpf;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Interaction logic for TabbedWindow.xaml
 /// </summary>
 public partial class TabbedWindow : Window
 {
