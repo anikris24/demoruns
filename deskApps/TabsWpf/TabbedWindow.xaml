@@ -1,40 +1,102 @@
 <Window x:Class="TabsWpf.TabbedWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Tabbed Window" Height="450" Width="800">
+        Title="Tabbed Window"
+        Height="450"
+        Width="800">
 
-<TabControl Margin="10">
-            
-            <TabItem Header="🏠 Home">
-                <StackPanel Margin="20">
-                    <TextBlock FontSize="24" FontWeight="Bold" Text="Application Dashboard" Foreground="Navy"/>
-                    <TextBlock Margin="0,10,0,0" Text="Select a tab above to navigate to a different section."/>
+    <TabControl Margin="10" TabStripPlacement="Left">
+
+        <TabItem Header="🏠 Home 1">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 1"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 2">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 2"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 3">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 3"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 4">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 4"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="🏠 Home 5">
+            <StackPanel Margin="20">
+                <TextBlock FontSize="24"
+                        FontWeight="Bold"
+                        Text="Application Dashboard 5"
+                        Foreground="Navy"/>
+                <TextBlock Margin="0,10,0,0"
+                        Text="Select a tab above to navigate to a different section."/>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="📝 Data Entry">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Name:"
+                        Margin="0,0,0,5"/>
+                <TextBox Grid.Row="1"
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        Padding="5"/>
+                <Button Grid.Row="2"
+                        Content="Save Data"
+                        Width="100"
+                        HorizontalAlignment="Left"
+                        Margin="0,15,0,0"/>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="📊 Reports">
+            <ScrollViewer Margin="20">
+                <StackPanel>
+                    <TextBlock FontSize="18"
+                            Text="Generated Report View"/>
+                    <Border BorderBrush="Gray"
+                            BorderThickness="1"
+                            Height="250"
+                            Margin="0,10,0,0"
+                            Padding="10">
+                        <TextBlock Text="[A Placeholder for a DataGrid or Chart Control]"
+                                FontStyle="Italic"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                    </Border>
                 </StackPanel>
-            </TabItem>
+            </ScrollViewer>
+        </TabItem>
 
-            <TabItem Header="📝 Data Entry">
-                <Grid Margin="20">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="Name:" Margin="0,0,0,5"/>
-                    <TextBox Grid.Row="1" Width="300" HorizontalAlignment="Left" Padding="5"/>
-                    <Button Grid.Row="2" Content="Save Data" Width="100" HorizontalAlignment="Left" Margin="0,15,0,0"/>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="📊 Reports">
-                <ScrollViewer Margin="20">
-                    <StackPanel>
-                        <TextBlock FontSize="18" Text="Generated Report View"/>
-                        <Border BorderBrush="Gray" BorderThickness="1" Height="250" Margin="0,10,0,0" Padding="10">
-                            <TextBlock Text="[A Placeholder for a DataGrid or Chart Control]" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </Border>
-                    </StackPanel>
-                </ScrollViewer>
-            </TabItem>
-            
-        </TabControl>
-        </Window>
+    </TabControl>
+</Window>
