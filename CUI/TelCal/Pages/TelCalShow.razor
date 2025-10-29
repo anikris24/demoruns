@@ -1,0 +1,47 @@
+@using System;
+@using Telerik.Blazor.Components;
+@using Telerik.Blazor.Components.Calendar;
+
+@page "/telcal"
+
+<div id="calendar_@id"
+    style="position:absolute;display:flex;align-items:center;left:30%;top:30%;background-color:lightorange;width:800px;"
+    title="welcome to tel calendar">
+        <TelerikCalendar 
+            Min="@MinDate" 
+            Max="@MaxDate"
+            Views="@Views" 
+            @bind-Date="@StartDate" 
+            @bind-Value="@SelectedDate" 
+            @bind-View="@SelectedView"
+            OnCellRender="@OnCellRenderHandler">
+        </TelerikCalendar>
+</div>
+<style>
+    #calendar_@id .highlightToday .k-link {
+        box-shadow: inset 0 0 0 1px #3f51b5;
+    }
+</style>
+
+@code {
+    internal Telerik.Blazor.CalendarView SelectedView = Telerik.Blazor.CalendarView.Month;
+    private string id = Guid.NewGuid().ToString("N")[..12];
+    public DateTime MinDate = DateTime.MinValue;
+
+    public DateTime MaxDate = DateTime.MaxValue;
+    public DateTime SelectedDate = DateTime.Now;
+
+    public byte Views => (byte)(3 * 2);
+
+    public DateTime StartDate = DateTime.Now;
+
+    public static void OnCellRenderHandler(CalendarCellRenderEventArgs args)
+    {
+        if (args.Date == DateTime.Today.Date)
+        {
+            args.Class = "highlightToday";
+        }
+    }
+
+
+}
