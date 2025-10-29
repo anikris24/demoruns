@@ -29,6 +29,15 @@ export class App {
     // NOTE: The parent component's ngDoCheck still runs, but the child is skipped.
   }
 
+  // 4. Mutates and then creates a new reference to force an update
+  mutateAndForceUpdate() {
+    this.currentUser.age = 75;
+    // By creating a new user object, we change the input reference,
+    // which tells the OnPush child component to update.
+    this.currentUser = new User(this.currentUser.name, this.currentUser.age);
+    console.log('Parent: Mutated and then created new reference. OnPush will update.');
+  }
+
   // 3. Just an event to trigger a global check
   runArbitraryEvent() {
     console.log('Parent: Triggered arbitrary event.');
