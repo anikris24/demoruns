@@ -1,8 +1,11 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { User } from './user.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-on-push-child',
+  standalone: true,
+  imports: [DatePipe],
   template: `
     <div style="border: 2px solid green; padding: 10px; margin-top: 10px;">
       <h4>🟢 OnPush Child Component</h4>
