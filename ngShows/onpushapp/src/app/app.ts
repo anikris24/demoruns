@@ -12,7 +12,6 @@ import { OnPushChildComponent } from './on-push-child.component';
 export class App {
   protected readonly title = signal('onpushapp');
   currentUser = new User('Alice', 30);
-  
   // 1. Correctly updates the child component
   changeUserReference() {
     // A new object reference is created, which triggers OnPush
