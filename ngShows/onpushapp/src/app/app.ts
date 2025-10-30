@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, AfterViewInit, AfterViewChecked, OnDestroy, SimpleChanges } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from './user.model';
-import { OnPushChildComponent } from './on-push-child.component';
+import { OnPushChildComponent } from './on-push-child-component';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,30 @@ import { OnPushChildComponent } from './on-push-child.component';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit, AfterViewInit, AfterViewChecked, OnDestroy {
   protected readonly title = signal('onpushapp');
   currentUser = new User('Alice', 30);
+
+  ngOnInit() {
+    console.log('Parent: ngOnInit');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Parent: ngOnChanges fired', changes);
+  }
+
+  ngAfterViewInit() {
+    console.log('Parent: ngAfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('Parent: ngAfterViewChecked');
+  }
+
+  ngOnDestroy() {
+    console.log('Parent: ngOnDestroy');
+  }
+
   // 1. Correctly updates the child component
   changeUserReference() {
     // A new object reference is created, which triggers OnPush
@@ -40,6 +61,10 @@ export class App {
   // 3. Just an event to trigger a global check
   runArbitraryEvent() {
     console.log('Parent: Triggered arbitrary event.');
+  }
+
+  noOnDestroy() {
+    console.log('Parent: noOnDestroy');
   }
   
   ngDoCheck() {

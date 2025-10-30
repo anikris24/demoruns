@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy,  OnChanges, OnInit, AfterViewInit, AfterViewChecked, SimpleChanges, OnDestroy } from '@angular/core';
 import { User } from './user.model';
 import { DatePipe } from '@angular/common';
 
@@ -17,13 +17,34 @@ import { DatePipe } from '@angular/common';
   // This is the key: only check for changes if inputs change reference or an event fires.
   changeDetection: ChangeDetectionStrategy.OnPush 
 })
-export class OnPushChildComponent {
+export class OnPushChildComponent implements OnChanges, OnInit, AfterViewInit, AfterViewChecked, OnDestroy {
   @Input() user!: User;
   lastChecked = new Date();
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Child: ngOnChanges fired', changes);
+  }
+
+  ngOnInit() {
+    console.log('Child: ngOnInit');
+  }
+
+  ngAfterViewInit() {
+    console.log('Child: ngAfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('Child: ngAfterViewChecked');
+  }
+
 
   // Lifecycle hook called when Angular checks this component for changes
   ngDoCheck() {
     this.lastChecked = new Date();
     console.log('Child: ngDoCheck ran (OnPush)');
+  }
+
+  ngOnDestroy() {
+    console.log('Child: ngOnDestroy');
   }
 }
