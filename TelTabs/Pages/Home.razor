@@ -10,6 +10,12 @@
             </span>
         </HeaderTemplate>
         </TabStripTab>
-        <TabStripTab Title="Orders" TitleAttributes='@(new Dictionary<string, object>(){ {"title", "View all current orders"} })'>
+        <TabStripTab Title="Orders" >
+        <HeaderTemplate>
+            <strong class="tab-header-style" title="mcpItem?.DisplayName"> Order-Display-name</strong>
+            <button type="button" class="position-absolute end-0 bg-transparent border-0 tab-header-style" @onclick:stopPropagation @onclick=@(() => ClosePaneTab(mcpItem!))>
+                <span aria-hidden=true >&times;</span>
+            </button>            
+        </HeaderTemplate>
         </TabStripTab>
 </TelerikTabStrip>
