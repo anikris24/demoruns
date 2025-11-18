@@ -1,0 +1,15 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<TelerikTabStrip>
+    <TabStripTab>
+        <HeaderTemplate>
+            <span title="This tab is disabled for editing.">
+                🔒 Locked Tab
+            </span>
+        </HeaderTemplate>
+        </TabStripTab>
+        <TabStripTab Title="Orders" TitleAttributes='@(new Dictionary<string, object>(){ {"title", "View all current orders"} })'>
+        </TabStripTab>
+</TelerikTabStrip>
