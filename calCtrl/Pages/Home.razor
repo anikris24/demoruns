@@ -1,0 +1,18 @@
+﻿@page "/"
+@using calCtrl.Components
+
+<PageTitle>Calendar Demo</PageTitle>
+
+<h1>Calendar Demo</h1>
+
+<div style="margin-top: 20px;">
+    <Calendar @bind-SelectedDate="selectedDate" />
+</div>
+
+<div style="margin-top: 20px;">
+    <p>Selected Date: <strong>@(selectedDate?.ToShortDateString() ?? "None")</strong></p>
+</div>
+
+@code {
+    private DateTime? selectedDate = DateTime.Today;
+}

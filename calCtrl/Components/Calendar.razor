@@ -1,0 +1,121 @@
+@using System.Globalization
+
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button class="nav-btn" @onclick="PrevMonth">&lt;</button>
+        <span class="month-year">@CurrentMonth.ToString("MMMM yyyy")</span>
+        <button class="nav-btn" @onclick="NextMonth">&gt;</button>
+    </div>
+
+    <div class="calendar-grid">
+        @foreach (var day in DayNames)
+        {
+            <div class="day-name">@day</div>
+        }
+
+        @foreach (var date in Days)
+        {
+            <div class="day-cell @GetDayClass(date)" @onclick="() => SelectDate(date)">
+                @date.Day
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public DateTime? SelectedDate { get; set; }
+
+    [Parameter]
+    public EventCallback<DateTime?> SelectedDateChanged { get; set; }
+
+    private DateTime CurrentMonth { get; set; } = DateTime.Today;
+    private List<string> DayNames { get; set; } = new();
+    private List<DateTime> Days { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        // Get day names (Sun, Mon, etc.)
+        DayNames = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames.ToList();
+        GenerateCalendar();
+    }
+
+    private void GenerateCalendar()
+    {
+        Days.Clear();
+
+        // First day of the month
+        var firstDayOfMonth = new DateTime(CurrentMonth.Year, CurrentMonth.Month, 1);
+        
+        // Determine how many days to pad from previous month
+        // DayOfWeek is 0 for Sunday, which aligns with our grid starting on Sunday
+        int daysToPad = (int)firstDayOfMonth.DayOfWeek;
+
+        // Add padding days from previous month
+        for (int i = daysToPad; i > 0; i--)
+        {
+            Days.Add(firstDayOfMonth.AddDays(-i));
+        }
+
+        // Add days of current month
+        int daysInMonth = DateTime.DaysInMonth(CurrentMonth.Year, CurrentMonth.Month);
+        for (int i = 0; i < daysInMonth; i++)
+        {
+            Days.Add(firstDayOfMonth.AddDays(i));
+        }
+
+        // Add padding days for next month to complete the last row (optional, but looks better)
+        int remainingCells = 42 - Days.Count; // 6 rows * 7 columns = 42
+        if (remainingCells < 7 && remainingCells > 0) // Only pad if we need to finish a row, or fill to 6 rows
+        {
+             // Actually, let's just fill the remaining grid cells to keep height consistent or just finish the week
+             // Telerik usually fills 6 rows.
+        }
+        
+        // Let's just fill until we reach a multiple of 7
+        while (Days.Count % 7 != 0)
+        {
+             Days.Add(Days.Last().AddDays(1));
+        }
+    }
+
+    private void PrevMonth()
+    {
+        CurrentMonth = CurrentMonth.AddMonths(-1);
+        GenerateCalendar();
+    }
+
+    private void NextMonth()
+    {
+        CurrentMonth = CurrentMonth.AddMonths(1);
+        GenerateCalendar();
+    }
+
+    private async Task SelectDate(DateTime date)
+    {
+        SelectedDate = date;
+        await SelectedDateChanged.InvokeAsync(SelectedDate);
+    }
+
+    private string GetDayClass(DateTime date)
+    {
+        var css = "day-cell";
+        
+        if (date.Month != CurrentMonth.Month)
+        {
+            css += " other-month";
+        }
+
+        if (SelectedDate.HasValue && date.Date == SelectedDate.Value.Date)
+        {
+            css += " selected";
+        }
+
+        if (date.Date == DateTime.Today)
+        {
+            css += " today";
+        }
+
+        return css;
+    }
+}
